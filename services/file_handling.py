@@ -1,6 +1,8 @@
 import os
 import sys
 
+from database.database import users_db
+
 """Для того, чтобы было удобно работать с книгой -
 нам нужно преобразовать текстовый файл книги в словарь,
 где ключами будут номера страниц, а значениями - тексты этих страниц. """
@@ -9,6 +11,10 @@ BOOK_PATH = 'book/book.txt'
 PAGE_SIZE = 1050
 
 book: dict[int: str] = {}
+
+# функция возврата страницы книги
+def book_page(user_id):
+    return book[users_db[user_id]['page']]
 
 # Функция, возвращающая строку с текстом страницы и ее размер
 def _get_part_text(text: str, start: int, size: int) -> tuple[str, int]:
