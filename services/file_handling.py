@@ -8,7 +8,7 @@ from database.database import users_db
 где ключами будут номера страниц, а значениями - тексты этих страниц. """
 
 BOOK_PATH = 'book/book.txt'
-PAGE_SIZE = 1050
+PAGE_SIZE = 1450
 
 book: dict[int: str] = {}
 
